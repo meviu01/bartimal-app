@@ -78,7 +78,7 @@ def znajdz_nastepny_numer_pieca():
 
 # --- INTERFEJS APLIKACJI ---
 st.set_page_config(page_title="Kalkulator Produkcji BARTI-MAL", page_icon="🏭")
-st.title("🏭 Rejestrator Produkcji (Online)")
+st.title("🏭 Rejestrator Produkcji ")
 
 tab1, tab2 = st.tabs(["📝 Dodaj Piec / Odpad", "📊 Raporty i Historia"])
 
@@ -89,7 +89,7 @@ with tab1:
     if 'nastepny_numer' not in st.session_state:
         st.session_state['nastepny_numer'] = znajdz_nastepny_numer_pieca()
 
-    # Przycisk odświeżania numeru (bo dane są online)
+    # Przycisk odświeżania numeru 
     if st.button("🔄 Odśwież numer pieca"):
         st.session_state['nastepny_numer'] = znajdz_nastepny_numer_pieca()
         st.rerun()
@@ -251,4 +251,5 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True
+
 )
